@@ -4,6 +4,8 @@ An example Django app including:
 
 - Gunicorn Web server
 - Whitenoise
+- Django-environ
+
 - PostgreSQL
 - CSS & JS Framework
 - JSON API
