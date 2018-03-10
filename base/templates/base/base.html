@@ -1,10 +1,17 @@
+{% load bootstrap4 %}
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <title>Django App</title>
+    {% bootstrap_css %}
   </head>
   <body>
+    {% bootstrap_messages %}
+
     {% block content %}
     {% endblock %}
+
+    {% bootstrap_javascript jquery='full' %}
   </body>
 </html>
