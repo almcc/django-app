@@ -124,3 +124,12 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
+# Default settings
+BOOTSTRAP4 = {
+    'jquery_url': '{}base/jquery/jquery.min.js'.format(STATIC_URL),
+    'css_url': '{}base/bootstrap/css/bootstrap.min.css'.format(STATIC_URL),
+    'theme_url': '{}base/bootswatch/materia/bootstrap.min.css'.format(STATIC_URL),
+    'javascript_url': '{}base/bootstrap/js/bootstrap.bundle.min.js'.format(STATIC_URL),
+    'popper_url': None,
+}
