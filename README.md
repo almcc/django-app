@@ -6,10 +6,10 @@ An example Django app including:
 - Whitenoise
 - dj-database-url
 - PostgreSQL
+- Boostrap, Bootswatch and django-bootstrap4
 
 Todo:
 
-- CSS & JS Framework
 - JSON API
 - JWT Auth
 - Celery Worker
