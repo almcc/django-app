@@ -26,7 +26,7 @@ Note: There command line tools and services that you will
 
 1. Create the python virtual environment:
   - `python3 -m venv vnev`
-  - `. venv/bin/activate`
+  - `. ./venv/bin/activate`
   - `pip install -r requirements.txt`
 2. Define the environment variables:
   - `. ./develop.env.starter`
