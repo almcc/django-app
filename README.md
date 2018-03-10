@@ -7,11 +7,19 @@ An example Django app including:
 - dj-database-url
 - PostgreSQL
 
+Todo:
+
 - CSS & JS Framework
 - JSON API
 - JWT Auth
 - Celery Worker
 - Caching
+- BDD Testing
+- Invoke targets for common tasks
+
+The Django project is called 'core' and it includes an single app called
+'base' which includes a couple of standard items the most projects would
+need.
 
 # Running
 
