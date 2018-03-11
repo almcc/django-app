@@ -11,6 +11,7 @@ An example Django app including:
 Todo:
 
 - JSON API
+- Linting
 - JWT Auth
 - Celery Worker
 - Caching
