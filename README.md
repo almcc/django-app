@@ -8,13 +8,12 @@ An example Django app including:
 - PostgreSQL
 - Boostrap, Bootswatch and django-bootstrap4
 - JSON API
+- Celery Worker
 
 Todo:
 
 - Linting
 - JWT Auth
-- Celery Worker
-- Caching
 - BDD Testing
 - Invoke targets for common tasks
 - Tidy up URL definitions
@@ -51,5 +50,9 @@ Note: There command line tools and services that you will
   - `python manage.py migrate`
 5. Create a super user
   - `python manage.py createsuperuser --email admin@example.com --username admin`
-6. Run the web-server:
+6. Run the web-server in it's own shell:
   - `gunicorn core.wsgi --reload --bind=127.0.0.1:8000`
+7. Run a celery worker in another shell:
+  - `celery -A core worker -l info`
+8. Run the celery monitor flower in another shell:
+  - `celery flower -A core --address=127.0.0.1 --port=5555`
