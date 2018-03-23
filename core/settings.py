@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     'bootstrap4',
+    'rest_framework',
 
     'base',
 ]
@@ -127,11 +128,20 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 BOOTSWATCH_THEME = 'default'
 
-# Default settings
 BOOTSTRAP4 = {
     'jquery_url': '{}base/jquery/jquery.min.js'.format(STATIC_URL),
     'css_url': '{}base/bootstrap/css/bootstrap.min.css'.format(STATIC_URL),
     'theme_url': '{}base/bootswatch/{}/bootstrap.min.css'.format(STATIC_URL, BOOTSWATCH_THEME),
     'javascript_url': '{}base/bootstrap/js/bootstrap.bundle.min.js'.format(STATIC_URL),
     'popper_url': None,
+}
+
+REST_FRAMEWORK = {
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.IsAuthenticated',
+    ],
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework.authentication.SessionAuthentication',
+    ),
+    'DEFAULT_VERSIONING_CLASS': 'rest_framework.versioning.NamespaceVersioning'
 }
