@@ -7,16 +7,17 @@ An example Django app including:
 - dj-database-url
 - PostgreSQL
 - Boostrap, Bootswatch and django-bootstrap4
+- JSON API
 
 Todo:
 
-- JSON API
 - Linting
 - JWT Auth
 - Celery Worker
 - Caching
 - BDD Testing
 - Invoke targets for common tasks
+- Tidy up URL definitions
 
 The Django project is called 'core' and it includes an single app called
 'base' which includes a couple of standard items the most projects would
@@ -49,6 +50,6 @@ Note: There command line tools and services that you will
 4. Migrate the database
   - `python manage.py migrate`
 5. Create a super user
-  - `python manage.py createsuperuser`
+  - `python manage.py createsuperuser --email admin@example.com --username admin`
 6. Run the web-server:
-  - `gunicorn core.wsgi --reload`
+  - `gunicorn core.wsgi --reload --bind=127.0.0.1:8000`
