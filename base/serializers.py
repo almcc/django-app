@@ -1,22 +1,31 @@
-from django.contrib.auth.models import Group, User
+from django_celery_beat.models import PeriodicTask, IntervalSchedule, CrontabSchedule, \
+    PeriodicTasks, SolarSchedule
 from rest_framework import serializers
 
 from base.models import Profile
 
 
-class UserSerializer(serializers.HyperlinkedModelSerializer):
+class PeriodicTaskSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
-        model = User
-        fields = ('url', 'username', 'email', 'groups', 'profile')
+        model = PeriodicTask
+        fields = '__all__'
 
 
-class ProfileSerializer(serializers.HyperlinkedModelSerializer):
+
+class IntervalScheduleSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
-        model = Profile
-        fields = ('url', )
+        model = IntervalSchedule
+        fields = '__all__'
 
 
-class GroupSerializer(serializers.HyperlinkedModelSerializer):
+
+class CrontabScheduleSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
-        model = Group
-        fields = ('url', 'name')
+        model = CrontabSchedule
+        fields = '__all__'
+
+
+class SolarScheduleSerializer(serializers.HyperlinkedModelSerializer):
+    class Meta:
+        model = SolarSchedule
+        fields = '__all__'

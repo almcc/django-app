@@ -54,5 +54,7 @@ Note: There command line tools and services that you will
   - `gunicorn core.wsgi --reload --bind=127.0.0.1:8000`
 7. Run a celery worker in another shell:
   - `celery -A core worker -l info`
-8. Run the celery monitor flower in another shell:
+8. Start the task scheduler:
+  - `celery -A core beat -l info --scheduler django_celery_beat.schedulers:DatabaseScheduler`
+9. Run the celery monitor flower in another shell:
   - `celery flower -A core --address=127.0.0.1 --port=5555`

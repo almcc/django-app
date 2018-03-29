@@ -18,13 +18,14 @@ from django.urls import include, path
 from rest_framework import routers
 
 from base.views import index
-from base.viewsets import GroupViewSet, UserViewSet, ProfileViewSet
+from base.viewsets import PeriodicTaskViewSet, IntervalScheduleViewSet, CrontabScheduleViewSet, \
+    SolarScheduleViewSet
 
 router = routers.DefaultRouter()
-router.register(r'users', UserViewSet)
-router.register(r'groups', GroupViewSet)
-router.register(r'profiles', ProfileViewSet)
-
+router.register(r'periodic-task', PeriodicTaskViewSet)
+router.register(r'interval-schedule', IntervalScheduleViewSet)
+router.register(r'crontab-schedule', CrontabScheduleViewSet)
+router.register(r'solar-schedule', SolarScheduleViewSet)
 
 urlpatterns = [
     path(r'api/v1/', include((router.urls, 'v1'))),

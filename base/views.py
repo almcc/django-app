@@ -1,6 +1,7 @@
 from django.shortcuts import render
-from base.tasks import visit
+from base.tasks import example
+
 
 def index(request):
-    visit.delay()
+    example.delay()  # trigger a background task
     return render(request, 'base/index.html', {})

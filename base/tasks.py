@@ -2,5 +2,5 @@ from celery import shared_task
 
 
 @shared_task(bind=True)
-def visit(self):
-    print('Task')
+def example(self):
+    pass

@@ -44,6 +44,7 @@ INSTALLED_APPS = [
 
     'bootstrap4',
     'rest_framework',
+    'django_celery_beat',
 
     'base',
 ]
