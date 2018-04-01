@@ -5,4 +5,4 @@ class BaseConfig(AppConfig):
     name = 'base'
 
     def ready(self):
-        import base.signals.handlers
+        import base.signals.handlers  # noqa: F401

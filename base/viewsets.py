@@ -1,10 +1,11 @@
-from django_celery_beat.models import PeriodicTask, IntervalSchedule, CrontabSchedule, \
-    SolarSchedule
+from django_celery_beat.models import (CrontabSchedule, IntervalSchedule,
+                                       PeriodicTask, SolarSchedule)
 from rest_framework import viewsets
 from rest_framework.permissions import IsAdminUser
 
-from base.serializers import PeriodicTaskSerializer, IntervalScheduleSerializer, \
-    CrontabScheduleSerializer, SolarScheduleSerializer
+from base.serializers import (CrontabScheduleSerializer,
+                              IntervalScheduleSerializer,
+                              PeriodicTaskSerializer, SolarScheduleSerializer)
 
 
 class PeriodicTaskViewSet(viewsets.ModelViewSet):

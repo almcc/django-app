@@ -1,8 +1,6 @@
-from django_celery_beat.models import PeriodicTask, IntervalSchedule, CrontabSchedule, \
-    PeriodicTasks, SolarSchedule
+from django_celery_beat.models import (CrontabSchedule, IntervalSchedule,
+                                       PeriodicTask, SolarSchedule)
 from rest_framework import serializers
-
-from base.models import Profile
 
 
 class PeriodicTaskSerializer(serializers.HyperlinkedModelSerializer):
@@ -11,12 +9,10 @@ class PeriodicTaskSerializer(serializers.HyperlinkedModelSerializer):
         fields = '__all__'
 
 
-
 class IntervalScheduleSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = IntervalSchedule
         fields = '__all__'
-
 
 
 class CrontabScheduleSerializer(serializers.HyperlinkedModelSerializer):
