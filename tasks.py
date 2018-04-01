@@ -1,5 +1,5 @@
 from invoke import task
-
+import os
 
 @task
 def lint(ctx):
@@ -14,3 +14,10 @@ def lint(ctx):
 
     if flake8.exited != 0:
         exit(flake8.exited)
+
+
+@task
+def test(ctx):
+    vars = {'DATABASE_URL': 'sqlite:///'}
+    os.environ.update(vars)
+    ctx.run('python manage.py test')
