@@ -9,13 +9,12 @@ An example Django app including:
 - Boostrap, Bootswatch and django-bootstrap4
 - JSON API
 - Celery Worker
+- Linting
+- Python invoke
 
 Todo:
-
-- Linting
 - JWT Auth
 - BDD Testing
-- Invoke targets for common tasks
 - Tidy up URL definitions
 
 The Django project is called 'core' and it includes an single app called
