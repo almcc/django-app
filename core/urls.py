@@ -30,5 +30,5 @@ router.register(r'solar-schedule', SolarScheduleViewSet)
 urlpatterns = [
     path(r'api/v1/', include((router.urls, 'v1'))),
     path(r'admin/', admin.site.urls),
-    path(r'', index)
+    path(r'/', index)
 ]
