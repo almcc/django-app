@@ -28,6 +28,23 @@ services:
     volumes:
       - broker-volume:/var/lib/rabbitmq
 
+  web:
+    build: .
+    ports:
+      - "8000:8000"
+    environment:
+      DJANGO_SETTINGS_MODULE: ${DJANGO_SETTINGS_MODULE}
+      DJANGO_SECRET_KEY: ${DJANGO_SECRET_KEY}
+      DJANGO_DEBUG: ${DJANGO_DEBUG}
+      DATABASE_URL: ${DATABASE_URL}
+      CELERY_BROKER_URL: ${CELERY_BROKER_URL}
+      ALLOWED_HOST: localhost
+    links:
+      - db
+      - broker
+    volumes:
+      - ./:/opt/app
+
 volumes:
   db-volume:
   broker-volume:
