@@ -44,13 +44,13 @@ Note: There command line tools and services that you will
      careful not to commit the `develop.env` file. It is the `.gitignore`
      just encase.
 3. Run the background services with docker:
-  - `docker-compose up -d`
+  - `docker-compose up -d broker db`
 4. Migrate the database
   - `python manage.py migrate`
 5. Create a super user
   - `python manage.py createsuperuser --email admin@example.com --username admin`
 6. Run the web-server in it's own shell:
-  - `gunicorn core.wsgi --reload --bind=127.0.0.1:8000`
+  - `gunicorn core.wsgi --reload --log-level DEBUG --bind=127.0.0.1:8000` or `python manage.py runserver 0.0.0.0:8000`
 7. Run a celery worker in another shell:
   - `celery -A core worker -l info`
 8. Start the task scheduler:

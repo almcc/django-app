@@ -147,3 +147,45 @@ REST_FRAMEWORK = {
 }
 
 CELERY_BROKER_URL = os.environ.get('CELERY_BROKER_URL', 'pyamqp://localhost:5672')
+
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'formatters': {
+        'stdout': {
+            'format': '%(asctime)s - %(levelname)s - %(name)s - %(message)s'
+        },
+    },
+    'handlers': {
+        'console': {
+            'class': 'logging.StreamHandler',
+            'formatter': 'stdout'
+        },
+    },
+    'loggers': {
+        'django': {
+            'handlers': ['console'],
+            'level': os.getenv('DJANGO_LOG_LEVEL', 'INFO'),
+        },
+        'django.db': {
+            'handlers': ['console'],
+            'level': os.getenv('DJANGO_DB_LOG_LEVEL', 'INFO'),
+            'propogate': False,
+        },
+        'django.template': {
+            'handlers': ['console'],
+            'level': os.getenv('DJANGO_TEMPLATE_LOG_LEVEL', 'INFO'),
+            'propogate': False,
+        },
+        'django.server': {
+            'handlers': ['console'],
+            'level': os.getenv('DJANGO_SERVER_LOG_LEVEL', 'INFO'),
+            'propogate': False,
+        },
+        'base': {
+            'handlers': ['console'],
+            'level': os.getenv('BASE_APP_LOG_LEVEL', 'DEBUG'),
+            'propogate': False,
+        },
+    },
+}
